@@ -1,0 +1,58 @@
+{
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "Base",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.us10-001.hana.ondemand.com",
+		"Organization": "54f9eb34-0ef2-4dad-9274-09fff8b6b358",
+		"Space": "35fdf103-bfae-40ec-90da-c5edee284efa",
+		"Deploy": {
+			"Description": "",
+			"WebClient": {
+				"Runtime": "production",
+				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
+			},
+			"Destination": [
+				{
+					"CF": "com.sap.edm.sampleservice.v2",
+					"MDK": "com.sap.edm.sampleservice.v2",
+					"URL": ""
+				}
+			],
+			"Name": "ns.DemoSampleApp",
+			"Version": "1.0.0",
+			"AppRouter": "standalone",
+			"URL": "https://64ad6f13trial-sample-nsdemosampleapp-approuter.cfapps.us10-001.hana.ondemand.com/nsDemoSampleApp"
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/54f9eb34-0ef2-4dad-9274-09fff8b6b358/space/35fdf103-bfae-40ec-90da-c5edee284efa",
+		"AppId": "com.sap.mdk.demo",
+		"Destination": [
+			"com.sap.edm.sampleservice.v2",
+			"com.sap.mdk.demo"
+		]
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=com.sap.mdk.demo&ClientId=01f6bd0f-7614-4159-87fb-83f60b015ead&ServerUrl=https://64ad6f13trial-sample-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com&SapCloudPlatformEndpoint=https://64ad6f13trial-sample-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com&AuthorizationEndpointUrl=https://64ad6f13trial-sample-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://64ad6f13trial-sample-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com&TokenUrl=https://64ad6f13trial-sample-com-sap-mdk-demo.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/token&multiUser=false"
+	},
+	"LCAP": {
+		"FullName": "",
+		"Service": [],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	},
+	"Build": {
+		"SourceMap": true,
+		"TSTarget": "es6",
+		"WMF": true
+	}
+}

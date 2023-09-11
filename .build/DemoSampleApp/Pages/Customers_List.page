@@ -1,0 +1,105 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ContactCell",
+					"_Name": "SectionContactCell0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"ContactCell": {
+						"Visible": true,
+						"ContextMenu": {
+							"PerformFirstActionWithFullSwipe": true,
+							"Items": []
+						},
+						"DetailImage": "",
+						"Headline": "{FirstName}",
+						"Subheadline": "{LastName}",
+						"Description": "{City}",
+						"ActivityItems": [
+							{
+								"_Name": "SectionContactCell0ActivityItems0",
+								"ActivityType": "Phone",
+								"ActivityValue": "{PhoneNumber}"
+							},
+							{
+								"_Name": "SectionContactCell0ActivityItems1",
+								"ActivityType": "Email",
+								"ActivityValue": "{EmailAddress}"
+							}
+						]
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"Search": {
+						"Enabled": true,
+						"BarcodeScanner": true
+					}
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton0",
+							"Title": "Customers",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"Image": "sap-icon://customer",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/DemoSampleApp/Actions/NavToCustomers_List.action",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Customers"
+								}
+							}
+						}
+					],
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Customers_List",
+	"Caption": "Customers",
+	"PrefersLargeCaption": true,
+	"DesignTimeTarget": {
+		"Service": "/DemoSampleApp/Services/com_sap_edm_sampleservice_v2.service",
+		"EntitySet": "Customers",
+		"QueryOptions": "$orderby=LastName"
+	}
+}
